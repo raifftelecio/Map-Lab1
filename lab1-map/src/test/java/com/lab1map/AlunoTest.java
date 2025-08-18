@@ -22,7 +22,7 @@ class AlunoTest {
 
     @Test
     void testEqualsAndHashCode() {
-        Aluno a1 = new Aluno("Vinicius", "2023208510012");
+        Aluno a1 = new Aluno("Vinicius Souto", "2023208510012");
         Aluno a2 = new Aluno("Carlos", "2023208510012");
         assertEquals(a1, a2);
         assertEquals(a1.hashCode(), a2.hashCode());
