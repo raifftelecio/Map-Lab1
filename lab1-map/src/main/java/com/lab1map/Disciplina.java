@@ -9,7 +9,6 @@ public class Disciplina {
     private Horario horario;
     private List<Aluno> alunos;
 
-    // Construtor com professor
     public Disciplina(String nome, Professor professor, Horario horario) {
         this.nome = nome;
         this.professor = professor;
@@ -17,14 +16,13 @@ public class Disciplina {
         this.alunos = new ArrayList<>();
     }
 
-    // Construtor sem professor (caso seja criado antes de vincular)
+    // Esse construtor é feito sem o professor, caso a disciplina seja criada antes de veincular ele
     public Disciplina(String nome, Horario horario) {
         this.nome = nome;
         this.horario = horario;
         this.alunos = new ArrayList<>();
     }
 
-    // Getters
     public String getNome() {
         return nome;
     }
@@ -45,7 +43,6 @@ public class Disciplina {
         return alunos.size();
     }
 
-    // Impressões
     public void printarAlunosMatriculados() {
         if (alunos.isEmpty()) {
             System.out.println("Nenhum aluno matriculado na disciplina " + nome);

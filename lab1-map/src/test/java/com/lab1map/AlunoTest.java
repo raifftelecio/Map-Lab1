@@ -22,22 +22,22 @@ class AlunoTest {
 
     @Test
     void testEqualsAndHashCode() {
-        Aluno a1 = new Aluno("Vinicius Souto", "2023208510012");
-        Aluno a2 = new Aluno("Carlos", "2023208510012");
-        assertEquals(a1, a2);
-        assertEquals(a1.hashCode(), a2.hashCode());
+        Aluno aluno1 = new Aluno("Vinicius Souto", "2023208510012");
+        Aluno aluno2 = new Aluno("Carlos Aleatório", "2023208510012");
+        assertEquals(aluno1, aluno2);
+        assertEquals(aluno1.hashCode(), aluno2.hashCode());
     }
 
     @Test
     void testAdicionarDisciplina() {
         Aluno aluno = new Aluno("Raiff", "2023208510025");
-        Disciplina d = new Disciplina("POO", new Horario(Dia.SEGUNDA, HoraAula._07_09));
+        Disciplina disciplina1 = new Disciplina("MÉTODOS AVANÇADOS DE PROGEAMAÇÃO", new Horario(Dia.SEGUNDA, HoraAula._07_09));
 
-        aluno.adicionarDisciplina(d);
+        aluno.adicionarDisciplina(disciplina1);
         assertEquals(1, aluno.getDisciplinas().size());
 
-        // Não deve duplicar
-        aluno.adicionarDisciplina(d);
+        // verificação, pois não deve duplicar
+        aluno.adicionarDisciplina(disciplina1);
         assertEquals(1, aluno.getDisciplinas().size());
     }
 }

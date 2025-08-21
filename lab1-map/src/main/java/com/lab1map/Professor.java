@@ -7,6 +7,7 @@ public class Professor {
     private String nome;
     private String email;
     private List<Disciplina> disciplinas = new ArrayList<>();
+
     public Professor(String nome, String email) {
         this.nome = nome;
         this.email = email;
@@ -26,9 +27,10 @@ public class Professor {
     }
 
     public void adicionarDisciplina(Disciplina disciplina) {
-      disciplinas.add(disciplina);
-  }
-  public List<Disciplina> getDisciplinas() {
-    return disciplinas;
-}
+        disciplinas.add(disciplina);
+    }
+
+    public List<Disciplina> getDisciplinas() {
+        return disciplinas;
+    }
 }

@@ -7,15 +7,15 @@ class HorarioTest {
 
     @Test
     void testCriacaoHorario() {
-        Horario h = new Horario(Dia.QUARTA, HoraAula._11_13);
-        assertEquals(Dia.QUARTA, h.getDia());
-        assertEquals(HoraAula._11_13, h.getHora());
+        Horario horarioTest = new Horario(Dia.QUARTA, HoraAula._11_13);
+        assertEquals(Dia.QUARTA, horarioTest.getDia());
+        assertEquals(HoraAula._11_13, horarioTest.getHora());
     }
 
     @Test
     void testToString() {
-        Horario h = new Horario(Dia.SEXTA, HoraAula._15_17);
-        assertEquals("SEXTA - _15_17", h.toString());
+        Horario horarioTest2 = new Horario(Dia.SEXTA, HoraAula._16_18);
+        assertEquals("SEXTA - _16_18", horarioTest2.toString());
     }
 }
 

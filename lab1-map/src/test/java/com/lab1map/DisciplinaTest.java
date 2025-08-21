@@ -9,40 +9,40 @@ class DisciplinaTest {
 
     @Test
     void testCriacaoDisciplinaComProfessor() {
-        Professor p = new Professor("Prof. Onildo dos Reis Freire", "onildo@servidor.uepb.edu.br");
-        Horario h = new Horario(Dia.TERCA, HoraAula._09_11);
-        Disciplina d = new Disciplina("ÁLGEBRA LINEAR", p, h);
+        Professor prof = new Professor("Prof. Onildo dos Reis Freire", "onildo@servidor.uepb.edu.br");
+        Horario horario1 = new Horario(Dia.TERCA, HoraAula._09_11);
+        Disciplina disciplina1 = new Disciplina("ÁLGEBRA LINEAR", prof, horario1);
 
-        assertEquals("ÁLGEBRA LINEAR", d.getNome());
-        assertEquals(p, d.getProfessor());
-        assertEquals(h, d.getHorario());
-        assertTrue(d.getAlunos().isEmpty());
+        assertEquals("ÁLGEBRA LINEAR", disciplina1.getNome());
+        assertEquals(prof, disciplina1.getProfessor());
+        assertEquals(horario1, disciplina1.getHorario());
+        assertTrue(disciplina1.getAlunos().isEmpty());
     }
 
     @Test
     void testCriacaoDisciplinaSemProfessor() {
-        Horario h = new Horario(Dia.QUARTA, HoraAula._11_13);
-        Disciplina d = new Disciplina("LINGUAGENS FORMAIS E TEORIA DA COMPUTAÇÃO", h);
+        Horario horario2 = new Horario(Dia.QUARTA, HoraAula._11_13);
+        Disciplina disciplina2 = new Disciplina("LINGUAGENS FORMAIS E TEORIA DA COMPUTAÇÃO", horario2);
 
-        assertEquals("LINGUAGENS FORMAIS E TEORIA DA COMPUTAÇÃO", d.getNome());
-        assertNull(d.getProfessor());
+        assertEquals("LINGUAGENS FORMAIS E TEORIA DA COMPUTAÇÃO", disciplina2.getNome());
+        assertNull(disciplina2.getProfessor());
     }
 
     @Test
     void testAdicionarAluno() {
-        Disciplina d = new Disciplina("ESTRUTURA DE DADOS", new Horario(Dia.QUINTA, HoraAula._13_15));
-        Aluno a = new Aluno("Ana", "001");
+        Disciplina disciplina3 = new Disciplina("MÉTODOS AVANÇADOS DE PROGRAMAÇÃO", new Horario(Dia.SEXTA, HoraAula._07_09));
+        Aluno aluno1 = new Aluno("Guilherme Ribeiro", "2023208510005");
 
-        d.adicionarAluno(a);
-        assertEquals(1, d.qtdDeAlunos());
-        assertTrue(a.getDisciplinas().contains(d));
+        disciplina3.adicionarAluno(aluno1);
+        assertEquals(1, disciplina3.qtdDeAlunos());
+        assertTrue(aluno1.getDisciplinas().contains(disciplina3));
     }
 
     @Test
     void testToString() {
-        Horario h = new Horario(Dia.SEXTA, HoraAula._15_17);
-        Disciplina d = new Disciplina("LABORATÓRIO DE ESTRUTURA DE DADOS", h);
-        assertEquals("LABORATÓRIO DE ESTRUTURA DE DADOS (" + h + ")", d.toString());
+        Horario horario3 = new Horario(Dia.SEGUNDA, HoraAula._11_13);
+        Disciplina disciplina3 = new Disciplina("REDES DE COMPUTADORES", horario3);
+        assertEquals("REDES DE COMPUTADORES (" + horario3 + ")", disciplina3.toString());
     }
 }
 
