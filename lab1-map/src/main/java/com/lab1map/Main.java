@@ -6,9 +6,9 @@ public class Main {
         
         // Criando professores
         System.out.println("1. CRIANDO PROFESSORES:");
-        Professor prof1 = new Professor("Dr. João Silva", "joao.silva@universidade.edu");
-        Professor prof2 = new Professor("Dra. Maria Santos", "maria.santos@universidade.edu");
-        Professor prof3 = new Professor("Dr. Carlos Oliveira", "carlos.oliveira@universidade.edu");
+        Professor prof1 = new Professor("Profa. Sabrina de Figueirêdo Souto", "sabrinadfs@servidor.uepb.edu.br");
+        Professor prof2 = new Professor("Prof. Dunfrey Pires Aragão", "dunfrey.aragao@servidor.uepb.edu.br");
+        Professor prof3 = new Professor("Prof. Israel Burití Galvão", "israelbg@servidor.uepb.edu.br");
         
         System.out.println("Professor 1: " + prof1 + " (" + prof1.getEmail() + ")");
         System.out.println("Professor 2: " + prof2 + " (" + prof2.getEmail() + ")");
@@ -54,11 +54,11 @@ public class Main {
         
         // Criando alunos
         System.out.println("5. CRIANDO ALUNOS:");
-        Aluno aluno1 = new Aluno("Ana Costa", "2024001");
-        Aluno aluno2 = new Aluno("Bruno Lima", "2024002");
-        Aluno aluno3 = new Aluno("Carlos Pereira", "2024003");
-        Aluno aluno4 = new Aluno("Diana Souza", "2024004");
-        Aluno aluno5 = new Aluno("Eduardo Ferreira", "2024005");
+        Aluno aluno1 = new Aluno("Guilherme Ribeiro", "2025001");
+        Aluno aluno2 = new Aluno("Raiff Telécio", "2025002");
+        Aluno aluno3 = new Aluno("Vinicius Souto", "2025003");
+        Aluno aluno4 = new Aluno("Vinicius Lopes", "2025004");
+        Aluno aluno5 = new Aluno("Gabriel Levy", "2025005");
         
         System.out.println("Aluno 1: " + aluno1);
         System.out.println("Aluno 2: " + aluno2);

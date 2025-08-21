@@ -8,16 +8,16 @@ class ProfessorTest {
 
     @Test
     void testCriacaoProfessor() {
-        Professor p = new Professor("Dr. João", "joao@uni.com");
-        assertEquals("Dr. João", p.getNome());
-        assertEquals("joao@uni.com", p.getEmail());
+        Professor p = new Professor("Profa. Katia Elizabete Galdino", "katiagaldino@servidor.uepb.edu.br");
+        assertEquals("Profa. Katia Elizabete Galdino", p.getNome());
+        assertEquals("katiagaldino@servidor.uepb.edu.br", p.getEmail());
         assertTrue(p.getDisciplinas().isEmpty());
     }
 
     @Test
     void testAdicionarDisciplina() {
-        Professor p = new Professor("Dr. Ana", "ana@uni.com");
-        Disciplina d = new Disciplina("Biologia", new Horario(Dia.SEGUNDA, HoraAula._07_09));
+        Professor p = new Professor("Prof. Daniel Scherer", "scherer@servidor.uepb.edu.br");
+        Disciplina d = new Disciplina("ANÁLISE E PROJETO DE SISTEMA", new Horario(Dia.SEGUNDA, HoraAula._07_09));
 
         p.adicionarDisciplina(d);
         assertEquals(1, p.getDisciplinas().size());
@@ -26,8 +26,8 @@ class ProfessorTest {
 
     @Test
     void testToString() {
-        Professor p = new Professor("Dr. Carlos", "carlos@uni.com");
-        assertEquals("Dr. Carlos", p.toString());
+        Professor p = new Professor("Prof. Fábio Luiz Leite Júnior", "fabioleite@servidor.uepb.edu.br");
+        assertEquals("Prof. Fábio Luiz Leite Júnior", p.toString());
     }
 }
 
