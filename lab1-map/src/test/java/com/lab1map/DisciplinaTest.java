@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 
 class DisciplinaTest {
 
+    //valida a criação de uma disciplina com professor e horário (a lista de aluno começa vazia)
     @Test
     void testCriacaoDisciplinaComProfessor() {
         Professor prof = new Professor("Prof. Onildo dos Reis Freire", "onildo@servidor.uepb.edu.br");
@@ -19,6 +20,7 @@ class DisciplinaTest {
         assertTrue(disciplina1.getAlunos().isEmpty());
     }
 
+    //tenta criar a disciplina, que inicialmente não tem professor
     @Test
     void testCriacaoDisciplinaSemProfessor() {
         Horario horario2 = new Horario(Dia.QUARTA, HoraAula._11_13);
@@ -28,6 +30,7 @@ class DisciplinaTest {
         assertNull(disciplina2.getProfessor());
     }
 
+    //verifica se ao adicionar aluno a disciplina, ele adiciona corretamente, e a lista de disciplina do aluno é atualizada
     @Test
     void testAdicionarAluno() {
         Disciplina disciplina3 = new Disciplina("MÉTODOS AVANÇADOS DE PROGRAMAÇÃO", new Horario(Dia.SEXTA, HoraAula._07_09));
@@ -38,6 +41,7 @@ class DisciplinaTest {
         assertTrue(aluno1.getDisciplinas().contains(disciplina3));
     }
 
+    //validando o método toString da classe Disciplina
     @Test
     void testToString() {
         Horario horario3 = new Horario(Dia.SEGUNDA, HoraAula._11_13);

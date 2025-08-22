@@ -3,6 +3,7 @@ package com.lab1map;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
+//criamos essa classe de HorarioTest apenas para garantir que estamos criando um horario com o dia e hora correta
 class HorarioTest {
 
     @Test

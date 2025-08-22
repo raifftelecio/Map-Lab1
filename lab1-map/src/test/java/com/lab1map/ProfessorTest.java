@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 class ProfessorTest {
 
+    //valida a criação de um professor 
     @Test
     void testCriacaoProfessor() {
         Professor prof1 = new Professor("Profa. Sabrina de Figueirêdo Souto", "sabrinadfs@servidor.uepb.edu.br");
@@ -14,6 +15,7 @@ class ProfessorTest {
         assertTrue(prof1.getDisciplinas().isEmpty());
     }
 
+    //testando a adição de uma disciplina ao professor, verifica se eh a msm que foi passada e altera a lista de tamanho
     @Test
     void testAdicionarDisciplina() {
         Professor prof2 = new Professor("Prof. Daniel Scherer", "scherer@servidor.uepb.edu.br");
@@ -24,6 +26,7 @@ class ProfessorTest {
         assertEquals(disciplina2, prof2.getDisciplinas().get(0));
     }
 
+    //Só verificando o método toString, se a saida ocorre como esperado.
     @Test
     void testToString() {
         Professor prof3 = new Professor("Prof. Fábio Luiz Leite Júnior", "fabioleite@servidor.uepb.edu.br");

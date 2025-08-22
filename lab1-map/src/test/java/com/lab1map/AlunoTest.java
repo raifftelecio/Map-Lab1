@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 class AlunoTest {
 
+    //criação do aluno, começando a lista de disciplina vazia
     @Test
     void testCriacaoAluno() {
         Aluno aluno = new Aluno("Raiff", "2023208510025");
@@ -20,6 +21,7 @@ class AlunoTest {
         assertEquals("Guilherme (2023208510005)", aluno.toString());
     }
 
+    //verifica se dois alunos com a mesma matrícula são considerados iguais.
     @Test
     void testEqualsAndHashCode() {
         Aluno aluno1 = new Aluno("Vinicius Souto", "2023208510012");
@@ -28,6 +30,7 @@ class AlunoTest {
         assertEquals(aluno1.hashCode(), aluno2.hashCode());
     }
 
+    //garante que a disciplina foi adicionada ao aluno corretamente
     @Test
     void testAdicionarDisciplina() {
         Aluno aluno = new Aluno("Raiff", "2023208510025");
@@ -36,7 +39,7 @@ class AlunoTest {
         aluno.adicionarDisciplina(disciplina1);
         assertEquals(1, aluno.getDisciplinas().size());
 
-        // verificação, pois não deve duplicar
+        // verificação, pois não deve duplicar ao asicionar a mesma disciplina novamente
         aluno.adicionarDisciplina(disciplina1);
         assertEquals(1, aluno.getDisciplinas().size());
     }
