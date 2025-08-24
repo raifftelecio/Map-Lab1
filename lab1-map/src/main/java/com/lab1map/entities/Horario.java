@@ -1,4 +1,5 @@
-package com.lab1map;
+package com.lab1map.entities;
+
 
 public class Horario {
     private Dia dia;

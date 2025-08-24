@@ -1,4 +1,4 @@
-package com.lab1map;
+package com.lab1map.entities;
 
 public enum Dia {
     SEGUNDA,
