@@ -37,7 +37,4 @@ public class ProfessorDisciplina {
                 && disciplina.getNome().equals(other.disciplina.getNome())
                 && disciplina.getHorario().toString().equals(other.disciplina.getHorario().toString());
     }
-
-
-
 }
