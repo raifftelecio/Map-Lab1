@@ -6,7 +6,6 @@ import com.lab1map.entities.Disciplina;
 
 /**
  * Representa a matrícula de um aluno em uma disciplina.
- * Valor-objeto usado pelo serviço; equality baseada em aluno+disciplina.
  */
 public class AlunoDisciplina {
 
