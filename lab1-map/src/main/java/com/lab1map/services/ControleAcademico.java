@@ -11,14 +11,14 @@ public class ControleAcademico {
   private List<ProfessorDisciplina> vinculos = new ArrayList<>();
 
   public void matricular(Aluno aluno, Disciplina disciplina) {
-    AlunoDisciplina ad = new AlunoDisciplina(aluno, disciplina);
+    AlunoDisciplina ad = disciplina.matricularAluno(aluno);
     if (!matriculas.contains(ad)) {
       matriculas.add(ad);
     }
   }
 
   public void vincularProfessor(Professor professor, Disciplina disciplina) {
-    ProfessorDisciplina pd = new ProfessorDisciplina(professor, disciplina);
+    ProfessorDisciplina pd = disciplina.atribuirProfessor(professor);
     if (!vinculos.contains(pd)) {
       vinculos.add(pd);
     }
