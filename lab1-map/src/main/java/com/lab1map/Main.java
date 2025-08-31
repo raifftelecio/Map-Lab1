@@ -2,12 +2,12 @@
 package com.lab1map;
 
 import com.lab1map.entities.Aluno;
-import com.lab1map.entities.Professor;
-import com.lab1map.entities.Disciplina;
-import com.lab1map.services.ControleAcademico;
-import com.lab1map.entities.Horario;
 import com.lab1map.entities.Dia;
+import com.lab1map.entities.Disciplina;
 import com.lab1map.entities.HoraAula;
+import com.lab1map.entities.Horario;
+import com.lab1map.entities.Professor;
+import com.lab1map.services.ControleAcademico;
 
 public class Main {
     public static void main(String[] args) {

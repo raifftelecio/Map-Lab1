@@ -4,9 +4,9 @@ package com.lab1map.services;
 import com.lab1map.entities.Aluno;
 import com.lab1map.entities.Disciplina;
 
-/**
- * Representa a matrícula de um aluno em uma disciplina.
- */
+/*
+ Representa a matrícula de um aluno em uma disciplina.
+*/
 public class AlunoDisciplina {
 
     private final Aluno aluno;

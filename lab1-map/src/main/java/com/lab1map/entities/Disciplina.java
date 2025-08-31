@@ -36,11 +36,11 @@ public class Disciplina {
         return nome + " (" + horario + ")";
     }
 
-    /**
-     * Cria e retorna um vínculo de matrícula entre este disciplina e o aluno.
-     * Responsabilidade: Disciplina cria o objeto AlunoDisciplina conforme o
-     * padrão GRASP Creator.
-     */
+    /*
+    Cria e retorna um vínculo de matrícula entre este disciplina e o aluno.
+    Responsabilidade: Disciplina cria o objeto AlunoDisciplina conforme o
+    padrão GRASP Creator.
+    */
     public AlunoDisciplina matricularAluno(Aluno aluno) {
         if (aluno == null) {
             throw new IllegalArgumentException("Aluno não pode ser null");
@@ -48,10 +48,10 @@ public class Disciplina {
         return new AlunoDisciplina(aluno, this);
     }
 
-    /**
-     * Associa um professor a esta disciplina e cria o vínculo ProfessorDisciplina.
-     * A disciplina passa a referenciar o professor e retorna o objeto de vínculo.
-     */
+    /*
+    Associa um professor a esta disciplina e cria o vínculo ProfessorDisciplina.
+    A disciplina passa a referenciar o professor e retorna o objeto de vínculo.
+    */
     public ProfessorDisciplina atribuirProfessor(Professor professor) {
         if (professor == null) {
             throw new IllegalArgumentException("Professor não pode ser null");

@@ -16,35 +16,65 @@ import com.lab1map.entities.Professor;
 import com.lab1map.services.ControleAcademico;
 
 class ControleAcademicoTest {
-  
 
-  @Test
-  void testMatriculaEConsultas() {
-    ControleAcademico controle = new ControleAcademico();
+    private ControleAcademico criarControleAcademicoComDisciplina(Disciplina disc, Aluno... alunos) {
+        ControleAcademico controle = new ControleAcademico();
+        for (Aluno aluno : alunos) {
+            controle.matricular(aluno, disc);
+        }
+        return controle;
+    }
 
-    Professor prof = new Professor("Prof. Dunfrey Pires Aragão", "dunfrey.aragao@servidor.uepb.edu.br");
-    Horario horario = new Horario(Dia.SEGUNDA, HoraAula._07_09);
-    Disciplina disc = new Disciplina("REDES DE COMPUTADORES", horario);
+    @Test
+    void deveMatricularAlunoEmDisciplina() {
+        Aluno aluno = new Aluno("Raiff Ferreira Telecio", "2023208510025");
+        Disciplina disc = new Disciplina("REDES DE COMPUTADORES", new Horario(Dia.SEGUNDA, HoraAula._07_09));
 
-    Aluno a1 = new Aluno("Raiff Ferreira Telecio", "2023208510025");
-    Aluno a2 = new Aluno("Guilherme Ribeiro Liebig", "2023208510005");
+        ControleAcademico controle = criarControleAcademicoComDisciplina(disc, aluno);
 
-    controle.matricular(a1, disc);
-    controle.matricular(a2, disc);
+        List<Aluno> alunos = controle.alunosDaDisciplina(disc);
+        assertEquals(1, alunos.size());
+    }
 
-    List<Aluno> alunos = controle.alunosDaDisciplina(disc);
-    assertEquals(2, alunos.size());
-    assertTrue(alunos.contains(a1) && alunos.contains(a2));
+    @Test
+    void deveRetornarAlunosMatriculadosNaDisciplina() {
+        Aluno a1 = new Aluno("Raiff Ferreira Telecio", "2023208510025");
+        Aluno a2 = new Aluno("Guilherme Ribeiro Liebig", "2023208510005");
+        Disciplina disc = new Disciplina("REDES DE COMPUTADORES", new Horario(Dia.SEGUNDA, HoraAula._07_09));
 
-    List<Disciplina> disciplinasA1 = controle.disciplinasDoAluno(a1);
-    assertEquals(1, disciplinasA1.size());
-    assertEquals(disc, disciplinasA1.get(0));
+        ControleAcademico controle = criarControleAcademicoComDisciplina(disc, a1, a2);
 
-    // professor ainda não vinculado via serviço
-    assertNull(controle.professorDaDisciplina(disc));
+        List<Aluno> alunos = controle.alunosDaDisciplina(disc);
+        assertTrue(alunos.contains(a1) && alunos.contains(a2));
+    }
 
-    // vincular professor e checar
-    controle.vincularProfessor(prof, disc);
-    assertEquals(prof, controle.professorDaDisciplina(disc));
-  }
+    @Test
+    void deveRetornarDisciplinasDeUmAluno() {
+        Aluno aluno = new Aluno("Raiff Ferreira Telecio", "2023208510025");
+        Disciplina disc = new Disciplina("REDES DE COMPUTADORES", new Horario(Dia.SEGUNDA, HoraAula._07_09));
+
+        ControleAcademico controle = criarControleAcademicoComDisciplina(disc, aluno);
+
+        List<Disciplina> disciplinas = controle.disciplinasDoAluno(aluno);
+        assertEquals(1, disciplinas.size());
+    }
+
+    @Test
+    void deveRetornarProfessorNuloQuandoNaoVinculado() {
+        Disciplina disc = new Disciplina("REDES DE COMPUTADORES", new Horario(Dia.SEGUNDA, HoraAula._07_09));
+        ControleAcademico controle = new ControleAcademico();
+
+        assertNull(controle.professorDaDisciplina(disc));
+    }
+
+    @Test
+    void deveVincularProfessorADisciplina() {
+        Disciplina disc = new Disciplina("REDES DE COMPUTADORES", new Horario(Dia.SEGUNDA, HoraAula._07_09));
+        Professor prof = new Professor("Prof. Dunfrey Pires Aragão", "dunfrey.aragao@servidor.uepb.edu.br");
+        ControleAcademico controle = new ControleAcademico();
+
+        controle.vincularProfessor(prof, disc);
+
+        assertEquals(prof, controle.professorDaDisciplina(disc));
+    }
 }
